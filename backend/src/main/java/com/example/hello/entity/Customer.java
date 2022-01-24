@@ -3,6 +3,7 @@
  */
 package com.example.hello.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +15,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name="account")
+@Table(name="customer")
 public class Customer {
 
 	/**
@@ -23,20 +24,28 @@ public class Customer {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String Name;
+	@Column(name="name")
+    private String name;
+	@Column(name="isi")
     private Long sid;
-    public Customer(String name, Long sid) {
-        Name = name;
+	
+    /**
+	 * 
+	 */
+	public Customer() {
+	}
+	public Customer(String name, Long sid) {
+        this.name = name;
         this.sid = sid;
     }
     public Long getId() {
         return id;
     }    
     public String getName() {
-        return Name;
+        return name;
     }
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
     public Long getSid() {
         return sid;
@@ -46,7 +55,7 @@ public class Customer {
     }
     @Override
     public String toString() {
-        return "Customer [sid=" + sid + "/Name=" + Name + "]";
+        return "Customer [sid=" + sid + "/name=" + name + "]";
     }    
 
 }

@@ -27,7 +27,6 @@ public class CustomerController {
 	 */
 	@Autowired
 	public CustomerController(CustomerService customerService) {
-		// TODO Auto-generated constructor stub
 		this.customerService = customerService;		
 		
 	}
