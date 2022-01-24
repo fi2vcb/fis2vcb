@@ -1,0 +1,18 @@
+<h3 class="ui header">Truy vấn thông tin Khách Hàng</h3>
+
+<div class="field">
+  <label for="CIF">Số CIF:</label>
+  <input name="CIF" id="CIF" #CIF>
+</div>
+<div class="field">
+  <label for="Name">Tên Khách Hàng:</label>
+  <input name="Name" id="Name" disabled>
+</div>
+<div class="field">
+  <label for="Balance">Số dư:</label>
+  <input name="Balance" id="Balance" disabled>
+</div>
+<button (click)="queryCIF(CIF)"
+class="ui positive right floated button">
+Hiển thị thông tin
+</button>

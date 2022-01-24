@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CIFQueryComponent } from './cif-query/cif-query.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CIFQueryComponent
   ],
   imports: [
     BrowserModule,
