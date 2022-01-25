@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TransferTrongvxComponent } from './transfer-trongvx/transfer-trongvx.component';
+import { TransferComponent } from './transfer/transfer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TransferTrongvxComponent
+    TransferComponent
   ],
   imports: [
     BrowserModule,
