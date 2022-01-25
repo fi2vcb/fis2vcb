@@ -4,16 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CIFQueryComponent } from './cif-query/cif-query.component';
+import { TransferTrongvxComponent } from './transfer-trongvx/transfer-trongvx.component'; 
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+
 const routes: Routes = [
-  { path: 'queryaccount', component: CIFQueryComponent },
+  { path: 'QueryAccount', component: CIFQueryComponent },
+  { path: 'Transfer', component: TransferTrongvxComponent }
 ];
 @NgModule({
   declarations: [
     AppComponent,
-    CIFQueryComponent
+    CIFQueryComponent,
+    TransferTrongvxComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,11 @@ export class CIFQueryComponent implements OnInit {
   queryCIF(CIF: HTMLInputElement): boolean {
     return false;
   }
-  constructor() { }
+
+  pageTitle: string;
+  constructor() {
+    this.pageTitle = "HIỂN THỊ THÔNG TIN KHÁCH HÀNG";
+  };
 
   ngOnInit(): void {
   }
