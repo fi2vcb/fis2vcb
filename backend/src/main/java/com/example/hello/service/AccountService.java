@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.hello.entity.Account;
+import com.example.hello.exception.AccountNotFoundException;
 import com.example.hello.repository.AccountRepository;
 
 /**
@@ -31,6 +32,11 @@ public class AccountService {
 	
     public List<Account> getAccounts(){
     	return accountRepository.findAll();
+    }
+
+	public Account findAccountBycif(Long cif){
+    	return accountRepository.findAccountBycif(cif)
+		.orElseThrow(() -> new AccountNotFoundException("Account " + cif + " not found"));
     }
 	
 }

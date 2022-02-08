@@ -6,14 +6,14 @@
     <input name="CIF" id="CIF" #CIF>
   </div>
   <div class="field">
-    <label for="Name">Tên Khách Hàng:</label>
-    <input name="Name" id="Name" disabled>
+    <label for="Name">ID Khách Hàng:</label>
+    <h5>{{resultAccount?.id}}</h5>
   </div>
   <div class="field">
     <label for="Balance">Số Dư:</label>
-    <input name="Balance" id="Balance" disabled>
+    <h5>{{resultAccount?.balance}}</h5>
   </div>
-  <button (click)="queryCIF(CIF)"
+  <button (click)="queryAccount(CIF)"
   class="ui positive right floated button">
   Hiển thị thông tin
   </button>

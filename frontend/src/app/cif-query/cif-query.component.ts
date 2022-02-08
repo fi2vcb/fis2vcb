@@ -1,4 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Account } from '../account';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-cif-query',
@@ -6,16 +9,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cif-query.component.css']
 })
 export class CIFQueryComponent implements OnInit {
-  queryCIF(CIF: HTMLInputElement): boolean {
-    return false;
-  }
+  
 
-  pageTitle: string;
-  constructor() {
-    this.pageTitle = "HIỂN THỊ THÔNG TIN KHÁCH HÀNG";
+  constructor(private accountService: AccountService) {
   };
 
   ngOnInit(): void {
+    //this.getAccounts();
   }
 
+  public accounts: Account[] | undefined;
+  public resultAccount: Account | undefined;
+
+  public queryAccount(CIF: HTMLInputElement): boolean {
+    this.accountService.findAccount(CIF.value).subscribe(
+      (response: Account) => {
+        this.resultAccount = response;       
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message)       
+      }
+    );
+    return false;
+  }
+
+
+  public getAccounts(): void {
+    this.accountService.getAccounts().subscribe(
+      (response: Account[]) => {
+        this.accounts = response;       
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message)       
+      }
+    );
+  }
 }
