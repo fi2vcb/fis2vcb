@@ -19,12 +19,12 @@ export class CIFQueryComponent implements OnInit {
   }
 
   public accounts: Account[] | undefined;
-  public resultAccount: Account | undefined;
+  public currentAccount: Account | undefined;
 
   public queryAccount(CIF: HTMLInputElement): boolean {
     this.accountService.findAccount(CIF.value).subscribe(
       (response: Account) => {
-        this.resultAccount = response;       
+        this.currentAccount = response;       
       },
       (error: HttpErrorResponse) => {
         alert(error.message)       

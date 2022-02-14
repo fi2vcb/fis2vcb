@@ -15,6 +15,10 @@ export class AccountService {
     return this.http.get<Account>(`${this.apiServiceURL}/api/v1/AddAccount`);
   }
 
+  public updateAccount(account: Account): Observable<Account> {
+    return this.http.get<Account>(`${this.apiServiceURL}/api/v1/UpdateAccount`);
+  }
+
   public getAccounts(): Observable<Account[]> {
     return this.http.get<Account[]>(`${this.apiServiceURL}/api/v1/ShowAccounts`);
   }
