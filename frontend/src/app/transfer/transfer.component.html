@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
+<header>
+    <h1>CHUYỂN KHOẢN</h1>
+</header>
 
 <body>
 
-    <h1>CHUYỂN KHOẢN</h1>
-
-    <form action="">
-        <label for="tkgui">Tài khoản gửi: </label>
-        <input type="text" id="tkgui" name="tkgui"><br><br>
-        <label for="tknhan">Tài khoản nhận: </label>
-        <input type="text" id="tknhan" name="tknhan"><br><br>
-        <label for="sotien">Số tiền: </label>
-        <input type="text" id="sotien" name="sotien"><br><br>
-        <input type="submit" value="Chuyển khoản">
-    </form>
-
-    <p>Trạng thái</p>
+    <div class="container-fluid">
+        <form [formGroup]="mainFormGroup" (ngSubmit)="onSubmit()">
+            <div formGroupName="customer">
+                <div class="mb-3">
+                    <label class="form-label">Tài khoản gửi</label>
+                    <input formControlName="tkgui" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Tài khoản nhận</label>
+                    <input formControlName="tknhan" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Số tiền</label>
+                    <input formControlName="sotien" type="number" class="form-control">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Transfer</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
 </body>
 
